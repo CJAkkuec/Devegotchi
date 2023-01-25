@@ -1,0 +1,56 @@
+{
+  "images": {
+    "purple": {
+      "lv1": {
+        "happy": [
+          "./assets/purple/1/1pc_happy.gif",
+          "./assets/purple/1/1pl_happy.gif",
+          "./assets/purple/1/1pr_happy.gif"
+        ],
+        "sad": [
+          "./assets/purple/1/1pc_sad.gif",
+          "./assets/purple/1/1pl_sad.gif",
+          "./assets/purple/1/1pr_sad.gif"
+        ]
+      },
+      "lv2": {
+        "happy": [
+          "./assets/purple/2/2pc_happy.gif",
+          "./assets/purple/2/2pl_happy.gif",
+          "./assets/purple/2/2pr_happy.gif"
+        ],
+        "sad": [
+          "./assets/purple/2/2pc_sad.gif",
+          "./assets/purple/2/2pl_sad.gif",
+          "./assets/purple/2/2pr_sad.gif"
+        ]
+      }
+    },
+    "green": {
+      "lv1": {
+        "happy": [
+          "green-level1-happy-1.jpg",
+          "green-level1-happy-2.jpg",
+          "green-level1-happy-3.jpg"
+        ],
+        "sad": [
+          "green-level1-sad-1.jpg",
+          "green-level1-sad-2.jpg",
+          "green-level1-sad-3.jpg"
+        ]
+      },
+      "lv2": {
+        "happy": [
+          "green-level2-happy-1.jpg",
+          "green-level2-happy-2.jpg",
+          "green-level2-happy-3.jpg"
+        ],
+        "sad": [
+          "green-level2-sad-1.jpg",
+          "green-level2-sad-2.jpg",
+          "green-level2-sad-3.jpg"
+        ]
+      }
+    }
+  }
+}
