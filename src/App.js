@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
+import styled from "styled-components";
 import images from "./data/images.json";
 import subjects from "./data/subjects.json";
 
@@ -15,6 +16,7 @@ import NeedList from "./components/NeedList";
 import Title from "./components/Title";
 import Star from "./components/Star";
 import Disclaimer from "./components/Disclaimer";
+import Indicator from "./components/Indicator";
 
 const purpleSet = images.images.purple;
 
@@ -63,6 +65,7 @@ export default function App() {
   const [levelSet, setLevelSet] = useState(purpleSet.lv1);
   const [starAnimation, setStarAnimation] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [poke, setPoke] = useState(false);
 
   const [inputValue, setInputValue] = useState("");
   const [animationState, cycleAnimation] = useCycle(
@@ -168,6 +171,13 @@ export default function App() {
     setIsOpen(false);
   }
 
+  function handleReaction() {
+    setPoke(true);
+    setTimeout(() => {
+      setPoke(false);
+    }, 1000);
+  }
+
   return (
     <Wrapper>
       {isOpen && <Modal handleOpen={handleOpen} handleReset={handleReset} />}
@@ -186,14 +196,24 @@ export default function App() {
 
       <ImageWrapper>
         {starAnimation && <Star motion={motion} />}
-        <motion.img
-          src={selectedImage}
+        <MotionBox
           animate={animationState}
           variants={variants}
           onAnimationComplete={cycleAnimation}
-        />
+        >
+          <Indicator
+            poke={poke}
+            creature={creature}
+            creatureNeedsCounts={creatureNeedsCounts}
+          />
+          <img src={selectedImage} onClick={() => handleReaction()} />
+        </MotionBox>
       </ImageWrapper>
       <Disclaimer />
     </Wrapper>
   );
 }
+
+const MotionBox = styled(motion.div)`
+  position: relative;
+`;

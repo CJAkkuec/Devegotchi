@@ -16,7 +16,7 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100%;
 `;
 
@@ -25,6 +25,7 @@ const Amount = styled.span`
   font-size: 1.5rem;
   white-space: normal;
   color: #fff;
+  padding: 0.5rem;
 `;
 
 const Button = styled.button`
@@ -45,8 +46,8 @@ const Button = styled.button`
 
 const StyledBox = styled.div`
   margin: 0;
-  width: 7rem;
-  height: 7rem;
+  width: 8rem;
+  height: 8rem;
   background: ${({ needAmount }) =>
     needAmount < 20 ? "var(--pastel-red)" : "var(--pastel-green)"};
   box-shadow: 0 4px var(--pc-outline), 0 -4px var(--pc-outline),
