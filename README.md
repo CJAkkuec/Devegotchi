@@ -1,3 +1,3 @@
 # Devegotchi
 
-A simple tamagotchi-style app.
+A simple tamagotchi-style game.
