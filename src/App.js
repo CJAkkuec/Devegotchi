@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
-import { images } from "./data/images.json";
-import { subjects } from "./data/subjects.json";
+import images from "./data/images.json";
+import subjects from "./data/subjects.json";
 
 import Wrapper from "./components/Wrapper";
 import ImageWrapper from "./components/ImageWrapper";
@@ -16,7 +16,7 @@ import Title from "./components/Title";
 import Star from "./components/Star";
 import Disclaimer from "./components/Disclaimer";
 
-const purpleSet = images.purple;
+const purpleSet = images.images.purple;
 
 const initialCreature = {
   coffee: 100,
@@ -24,38 +24,38 @@ const initialCreature = {
   code: 100,
   joy: 100,
   level: 1,
-  progress: 0
+  progress: 0,
 };
 
 const variants = {
   walkRight: {
     x: ["0%", "100%"],
     transition: {
-      duration: 5
-    }
+      duration: 5,
+    },
   },
   rightToMiddle: {
     x: ["100%", "0%"],
     transition: {
-      duration: 5
-    }
+      duration: 5,
+    },
   },
   walkLeft: {
     x: ["0%", "-100%"],
     transition: {
-      duration: 5
-    }
+      duration: 5,
+    },
   },
   leftToMiddle: {
     x: ["-100%", "0%"],
     transition: {
-      duration: 5
-    }
+      duration: 5,
+    },
   },
   idle: {
     x: 0,
-    transition: { duration: 10 }
-  }
+    transition: { duration: 10 },
+  },
 };
 
 export default function App() {
@@ -86,7 +86,7 @@ export default function App() {
     walkRight: moodSet[2],
     rightToMiddle: moodSet[1],
     walkLeft: moodSet[1],
-    leftToMiddle: moodSet[2]
+    leftToMiddle: moodSet[2],
   };
 
   const selectedImage = animationStateImage[animationState];
@@ -105,7 +105,7 @@ export default function App() {
       coffee: Math.max(0, prevStats.coffee - 1),
       hunger: Math.max(0, prevStats.hunger - 1),
       code: Math.max(0, prevStats.code - 1),
-      joy: Math.max(0, prevStats.joy - 1)
+      joy: Math.max(0, prevStats.joy - 1),
     }));
   };
 
@@ -117,7 +117,7 @@ export default function App() {
   const increaseNeed = (need, amount) => {
     setCreature((prevStats) => ({
       ...prevStats,
-      [need]: Math.min(prevStats[need] + amount, 100)
+      [need]: Math.min(prevStats[need] + amount, 100),
     }));
   };
 
@@ -129,14 +129,14 @@ export default function App() {
     event.preventDefault();
     setStarAnimation(false);
 
-    const matches = subjects.filter(
+    const matches = subjects.subjects.filter(
       (subject) => subject.toLowerCase() === inputValue.toLowerCase()
     );
 
     if (matches.length > 0) {
       setCreature((prevStats) => ({
         ...prevStats,
-        progress: Math.min(prevStats.progress + 1, 10)
+        progress: Math.min(prevStats.progress + 1, 10),
       }));
     }
 
@@ -144,11 +144,11 @@ export default function App() {
       setStarAnimation(true);
       setCreature((prevStats) => ({
         ...prevStats,
-        level: Math.min(prevStats.level + 1, 12)
+        level: Math.min(prevStats.level + 1, 12),
       }));
       setCreature((prevStats) => ({
         ...prevStats,
-        progress: 0
+        progress: 0,
       }));
     }
 
@@ -163,7 +163,7 @@ export default function App() {
     setCreature((prevStats) => ({
       ...prevStats,
       progress: 0,
-      level: 1
+      level: 1,
     }));
     setIsOpen(false);
   }

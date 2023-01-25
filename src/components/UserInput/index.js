@@ -33,7 +33,7 @@ export default function UserInput({ onSubmit, onChange, inputValue }) {
           type="text"
           id="web-dev-subject"
           value={inputValue}
-          onChange={() => onChange((event) => event.target.value)}
+          onChange={(event) => onChange(event.target.value)}
         />
       </StyledBox>
 

@@ -1,2 +1,3 @@
 # Devegotchi
-Created with CodeSandbox
+
+A simple tamagotchi-style app.
