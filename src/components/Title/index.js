@@ -9,5 +9,5 @@ const StyledTitle = styled.h1`
 `;
 
 export default function Title() {
-  return <StyledTitle>Debbe</StyledTitle>;
+  return <StyledTitle>Devegotchi</StyledTitle>;
 }
