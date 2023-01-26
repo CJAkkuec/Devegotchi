@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import styled from "styled-components";
+
 import images from "./data/images.json";
 import subjects from "./data/subjects.json";
 
@@ -9,7 +10,6 @@ import ImageWrapper from "./components/ImageWrapper";
 import TitleWrapper from "./components/TitleWrapper";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
-
 import UserInput from "./components/UserInput";
 import LevelProgress from "./components/LevelProgress";
 import NeedList from "./components/NeedList";
